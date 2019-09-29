@@ -1,5 +1,17 @@
-- name: "Build APK"
-  uses: msfjarvis/setup-android@1.0
-  with:
-    entrypoint: ./gradlew
-    args: dependencies assembleDebug
+name: Build Workflow
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build APK
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Build APK"
+        uses: msfjarvis/setup-android@1.0
+        with:
+          entrypoint: ./gradlew
+          args: dependencies assembleDebug
