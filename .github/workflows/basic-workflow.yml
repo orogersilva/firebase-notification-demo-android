@@ -1,8 +1,5 @@
-workflow "Build Workflow" {
-  on = "push"
-}
-
-action "Build" {
-  uses = "vgaidarji/android-github-actions/build@v1.0.0"
-  args = "./gradlew assembleDebug"
-}
+- name: "Build APK"
+  uses: msfjarvis/setup-android@1.0
+  with:
+    entrypoint: ./gradlew
+    args: dependencies assembleDebug
