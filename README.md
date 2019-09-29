@@ -1,3 +1,3 @@
 # Firebase Notification Demo
 
-https://github.com/<OWNER>/<REPOSITORY>/workflows/<WORKFLOW_NAME>/badge.svg
+https://github.com/orogersilva/firebase-notification-demo-android/workflows/Build%20Workflow/badge.svg

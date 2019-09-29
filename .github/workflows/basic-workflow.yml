@@ -11,7 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Build APK"
-        uses: msfjarvis/setup-android@0.2
-        with:
-          entrypoint: ./gradlew
-          args: dependencies assembleDebug
+        uses: vgaidarji/android-github-actions/build@v1.0.0
+        args = "./gradlew assembleDebug"
