@@ -14,6 +14,7 @@ import com.google.firebase.iid.FirebaseInstanceId
 import com.orogersilva.firebasenotificationdemo.R
 import com.orogersilva.firebasenotificationdemo.services.DemoFirebaseMessagingService
 import com.orogersilva.firebasenotificationdemo.viewmodels.MainViewModel
+import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class MainActivity : AppCompatActivity() {
@@ -32,12 +33,18 @@ class MainActivity : AppCompatActivity() {
 
         LocalBroadcastManager.getInstance(this).registerReceiver(newDeviceTokenReceiver,
             IntentFilter(DemoFirebaseMessagingService.NEW_DEVICE_TOKEN_ACTION))
+
+        LocalBroadcastManager.getInstance(this).registerReceiver(
+            newMessageReceiver, IntentFilter(
+                DemoFirebaseMessagingService.NEW_MESSAGE_RECEIVED_ACTION)
+        )
     }
 
     override fun onStop() {
 
         super.onStop()
 
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(newMessageReceiver)
         LocalBroadcastManager.getInstance(this).unregisterReceiver(newDeviceTokenReceiver)
     }
 
@@ -52,6 +59,17 @@ class MainActivity : AppCompatActivity() {
 
                 // mainViewModel.sendDeviceRegistrationToken(nDeviceToken)
             }
+        }
+    }
+
+    private val newMessageReceiver = object : BroadcastReceiver() {
+
+        override fun onReceive(context: Context, intent: Intent) {
+
+            val newMessage = intent
+                .getStringExtra(DemoFirebaseMessagingService.NEW_MESSAGE_RECEIVED_EXTRA)
+
+            messageTextView.text = newMessage
         }
     }
 }
