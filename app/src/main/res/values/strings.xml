@@ -1,3 +1,7 @@
 <resources>
+
     <string name="app_name">Firebase Notification Demo</string>
+
+    <string name="main_message">Waiting for a message…</string>
+
 </resources>
