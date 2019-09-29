@@ -1,3 +1,3 @@
 # Firebase Notification Demo
 
-![](https://github.com/orogersilva/firebase-notification-demo-android/workflows/Android%20CI/badge.svg)
+![https://github.com/orogersilva/firebase-notification-demo-android/actions](https://github.com/orogersilva/firebase-notification-demo-android/workflows/Android%20CI/badge.svg)
