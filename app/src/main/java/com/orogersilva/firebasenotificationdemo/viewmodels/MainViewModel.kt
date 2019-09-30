@@ -1,5 +1,6 @@
 package com.orogersilva.firebasenotificationdemo.viewmodels
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.orogersilva.firebasenotificationdemo.repositories.MainRepository
 import kotlinx.coroutines.Dispatchers
@@ -20,18 +21,12 @@ class MainViewModel(private val mainRepository: MainRepository) : ViewModel() {
                 if (response.isSuccessful) {
 
                     response.body()?.let { res ->
-
-
                     }
 
                 } else {
-
-
                 }
 
             } catch (e: Exception) {
-
-
             }
         }
     }

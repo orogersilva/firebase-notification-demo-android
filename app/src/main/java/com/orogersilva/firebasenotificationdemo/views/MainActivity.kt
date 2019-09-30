@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity() {
 
             newDeviceToken?.let { nDeviceToken ->
 
-                // mainViewModel.sendDeviceRegistrationToken(nDeviceToken)
+                mainViewModel.sendDeviceRegistrationToken(nDeviceToken)
             }
         }
     }
